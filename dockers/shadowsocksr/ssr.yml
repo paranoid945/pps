@@ -1,0 +1,12 @@
+version: '2'
+services:
+  ssr:
+    container_name: ssr
+    build: ./ssr_file
+    ports:
+      - "15111:15111"
+    restart: always
+    logging: 
+      driver: "json-file"
+      options: 
+        max-size: "100m"
