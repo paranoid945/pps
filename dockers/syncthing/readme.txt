@@ -1,0 +1,1 @@
+after install, you should create a password for the web ui by visiting http://x.x.x.x:8384 and follow the instruction.
