@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker-compose -f ssr.yml up -d && docker-compose -f ssr.yml logs -f -t
+docker-compose -f docker-compose.yml up -d && docker-compose -f docker-compose.yml logs -f -t

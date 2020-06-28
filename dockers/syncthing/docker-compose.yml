@@ -1,0 +1,19 @@
+version: "2.1"
+services:
+  syncthing:
+    image: linuxserver/syncthing
+    container_name: syncthing
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - UMASK_SET=022
+    volumes:
+      - /opt/syncthing/appdata/config:/config
+      - /opt/syncthing/data1:/data1
+      - /opt/syncthing/data2:/data2
+    ports:
+      - 8384:8384
+      - 22000:22000
+      - 21027:21027/udp
+    restart: unless-stopped
