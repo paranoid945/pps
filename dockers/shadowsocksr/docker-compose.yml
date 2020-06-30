@@ -4,7 +4,7 @@ services:
     container_name: ssr
     build: ./ssr_file
     ports:
-      - "15111:15111"
+      - "15112:15112"
     restart: always
     logging: 
       driver: "json-file"
