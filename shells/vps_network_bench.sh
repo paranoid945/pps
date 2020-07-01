@@ -173,7 +173,7 @@ speed_test(){
 
 print_speedtest() {
 	printf "%-18s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency" | tee -a $log
-	speed_test '27154' 'TianJin 5G   CU'
+	speed_test '5145' 'Beijing Unicom'
 	speed_test '27594' 'Guangzhou 5G CT'
 	speed_test '24447' 'Shanghai 5G  CU'
 	speed_test '26678' 'Guangzhou 5G CU'
@@ -476,7 +476,7 @@ print_intro() {
 
 sharetest() {
 	echo " Share result:" | tee -a $log
-	echo " ¡¤ $result_speed" | tee -a $log
+	echo " ï¿½ï¿½ $result_speed" | tee -a $log
 	log_preupload
 	case $1 in
 	'ubuntu')
@@ -490,7 +490,7 @@ sharetest() {
 		share_link=$( curl -sF c=@- https://ptpb.pw/?u=1 < $log );;
 	esac
 
-	echo " ¡¤ $share_link" | tee -a $log
+	echo " ï¿½ï¿½ $share_link" | tee -a $log
 	next
 	echo ""
 	rm -f $log_up
