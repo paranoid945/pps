@@ -23,14 +23,53 @@ external-controller: '0.0.0.0:9090'
 secret: ''
 
 proxies:
-  - name: "ssr-vultr"
-    type: ssr
-    server: vultr.donkeyroll.com
-    port: 15111
-    cipher: aes-256-cfb
-    password: "Password124578zxcvb"
-    obfs: tls1.2_ticket_auth
-    protocol: origin
-    obfs-param: ab89b222868.microsoft.com
-    #     # protocol-param: "#"
-    #         # udp: true
+    - {"name":"入门-新加坡直连01|V2ray","type":"vmess","server":"linode_new3.ddns-only.xyz","port":14222,"uuid":"3e1632c4-b1a2-3aa6-a3d0-fa523f9a5484","alterId":2,"cipher":"auto","udp":true,"network":"ws","ws-path":"/yaboviss","ws-headers":{"Host":"linode_new3.ddns-only.xyz"}}
+    - {"name":"入门-新加坡直连02|V2ray","type":"vmess","server":"linode_new4.ddns-only.xyz","port":14223,"uuid":"3e1632c4-b1a2-3aa6-a3d0-fa523f9a5484","alterId":2,"cipher":"auto","udp":true,"network":"ws","ws-path":"/yaboviss","ws-headers":{"Host":"linode_new4.ddns-only.xyz"}}
+    - {"name":"入门-香港直连01|V2ray","type":"vmess","server":"az-hk02.ddns-only.xyz","port":11604,"uuid":"3e1632c4-b1a2-3aa6-a3d0-fa523f9a5484","alterId":2,"cipher":"auto","udp":true,"network":"ws","ws-path":"/yaboviss","ws-headers":{"Host":"az-hk02.ddns-only.xyz"}}
+    - {"name":"入门-沪俄01|V2ray","type":"vmess","server":"xixi-shlt.ddns-only.xyz","port":14407,"uuid":"3e1632c4-b1a2-3aa6-a3d0-fa523f9a5484","alterId":2,"cipher":"auto","udp":true,"network":"ws","ws-path":"/yaboviss","ws-headers":{"Host":"ru-174241.ddns-only.xyz"}}
+    - {"name":"入门-鲁港01-NF|V2ray","type":"vmess","server":"xixi-qdyd.ddns-only.xyz","port":14423,"uuid":"3e1632c4-b1a2-3aa6-a3d0-fa523f9a5484","alterId":2,"cipher":"auto","udp":true,"network":"ws","ws-path":"/yaboviss","ws-headers":{"Host":"hkt-2020221763.ddns-only.xyz"}}
+    - {"name":"入门-沪港01|V2ray","type":"vmess","server":"xixi-shlt.ddns-only.xyz","port":14433,"uuid":"3e1632c4-b1a2-3aa6-a3d0-fa523f9a5484","alterId":2,"cipher":"auto","udp":true,"network":"ws","ws-path":"/yaboviss","ws-headers":{"Host":"azure-b2s-1.ddns-only.xyz"}}
+    - {"name":"入门-沪港03|V2ray","type":"vmess","server":"xixi-shlt.ddns-only.xyz","port":14437,"uuid":"3e1632c4-b1a2-3aa6-a3d0-fa523f9a5484","alterId":2,"cipher":"auto","udp":true,"network":"ws","ws-path":"/yaboviss","ws-headers":{"Host":"azure-b2s-3.ddns-only.xyz"}}
+    - {"name":"入门-沪港02|V2ray","type":"vmess","server":"xixi-shlt.ddns-only.xyz","port":14455,"uuid":"3e1632c4-b1a2-3aa6-a3d0-fa523f9a5484","alterId":2,"cipher":"auto","udp":true,"network":"ws","ws-path":"/yaboviss","ws-headers":{"Host":"azure-b2s-5.ddns-only.xyz"}}
+    - {"name":"入门-台湾01-NF|V2ray","type":"vmess","server":"hinet-142.ddns-only.xyz","port":14601,"uuid":"3e1632c4-b1a2-3aa6-a3d0-fa523f9a5484","alterId":2,"cipher":"auto","udp":true,"network":"ws","ws-path":"/yaboviss","ws-headers":{"Host":"hinet-142.ddns-only.xyz"}}
+    - {"name":"入门-台湾02-NF|V2ray","type":"vmess","server":"hinet-143.ddns-only.xyz","port":14602,"uuid":"3e1632c4-b1a2-3aa6-a3d0-fa523f9a5484","alterId":2,"cipher":"auto","udp":true,"network":"ws","ws-path":"/yaboviss","ws-headers":{"Host":"hinet-143.ddns-only.xyz"}}
+
+
+    proxy-groups:
+        -
+          name: Proxy
+          type: select
+          proxies:
+            - 入门-新加坡直连01|V2ray
+            - 入门-新加坡直连02|V2ray
+            - 入门-香港直连01|V2ray
+            - 入门-沪俄01|V2ray
+            - 入门-鲁港01-NF|V2ray
+            - 入门-沪港01|V2ray
+            - 入门-沪港03|V2ray
+            - 入门-沪港02|V2ray
+            - 入门-台湾01-NF|V2ray
+            - 入门-台湾02-NF|V2ray
+        -
+          name: Domestic
+          type: select
+          proxies:
+            - DIRECT
+            - Proxy
+        -
+          name: AsianTV
+          type: select
+          proxies:
+            - Domestic
+            - Proxy
+        -
+          name: GlobalTV
+          type: select
+          proxies:
+            - Proxy
+        -
+          name: Others
+          type: select
+          proxies:
+            - Proxy
+            - Domestic
