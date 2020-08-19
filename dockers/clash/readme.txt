@@ -1,2 +1,1 @@
-启动后，访问http://clash.razord.top/
-来配置
+启动后，访问http://clash.razord.top/设置自己clash的ip和端口来配置
