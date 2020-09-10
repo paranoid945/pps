@@ -1,1 +1,3 @@
+此为clash客户端
+首先修改config.yaml，注意proxies里的name要和rules里的MATCH匹配
 启动后，访问http://clash.razord.top/设置自己clash的ip和端口来配置
