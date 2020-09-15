@@ -5,13 +5,13 @@ yum update -y
 ./install_docker.sh
 
 # config firewalld
-firewall-cmd — add-port=6443/tcp — permanent
-firewall-cmd — add-port=2379–2380/tcp — permanent
-firewall-cmd — add-port=10250/tcp — permanent
-firewall-cmd — add-port=10251/udp — permanent
-firewall-cmd — add-port=10252/tcp — permanent
-firewall-cmd — add-port=30000-32767/tcp — permanent
-firewall-cmd — reload
+firewall-cmd --zone=public —-add-port=6443/tcp —-permanent
+firewall-cmd --zone=public —-add-port=2379–2380/tcp —-permanent
+firewall-cmd --zone=public —-add-port=10250/tcp —-permanent
+firewall-cmd --zone=public —-add-port=10251/udp —-permanent
+firewall-cmd --zone=public —-add-port=10252/tcp —-permanent
+firewall-cmd --zone=public —-add-port=30000-32767/tcp —-permanent
+firewall-cmd --zone=public —-reload
 
 # load br_netfilter permanently
 modprobe br_netfilter
