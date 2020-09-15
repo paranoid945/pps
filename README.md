@@ -2,4 +2,4 @@
 Personal private space.
 
 
-shells are for centos 7 by default.
+Shells are for centos 7 by default.
