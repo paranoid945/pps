@@ -6,7 +6,7 @@ yum update -y
 
 # config firewalld
 firewall-cmd --zone=public --add-port=6443/tcp --permanent
-firewall-cmd --zone=public --add-port=2379–2380/tcp --permanent
+firewall-cmd --zone=public --add-port=2379-2380/tcp --permanent
 firewall-cmd --zone=public --add-port=10250/tcp --permanent
 firewall-cmd --zone=public --add-port=10251/udp --permanent
 firewall-cmd --zone=public --add-port=10252/tcp --permanent
@@ -41,3 +41,7 @@ sudo setenforce 0
 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
+
+# disable swap
+swapoff -a
+sed -e 's/^\/dev\/mapper\/centos_bogon-swap/#&/' -i /etc/fstab
