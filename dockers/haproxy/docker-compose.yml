@@ -1,14 +1,14 @@
 version: '3.2'
 services:
   dnsmasq:
-    image: jpillora/dnsmasq
-    container_name: dnsmasq
+    image: haproxy:1.8-alpine
+    container_name: haproxy
     restart: always
     ports:
       - 53:53/udp
       - 8080:8080
     volumes:
-      - /opt/dnsmasq.conf:/etc/dnsmasq.conf 
+      - /etc/haproxy:/usr/local/etc/haproxy:ro
     logging: &logging
       driver: json-file
       options: # log rotation
