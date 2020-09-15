@@ -44,4 +44,5 @@ sudo systemctl enable --now kubelet
 
 # disable swap
 swapoff -a
+# comment out swap line in fstab
 sed -e 's/^\/dev\/mapper\/centos_bogon-swap/#&/' -i /etc/fstab

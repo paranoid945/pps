@@ -1,0 +1,16 @@
+version: '3.2'
+services:
+  dnsmasq:
+    image: jpillora/dnsmasq
+    container_name: dnsmasq
+    restart: always
+    ports:
+      - 53:53/udp
+      - 8080:8080
+    volumes:
+      - /opt/dnsmasq.conf:/etc/dnsmasq.conf 
+    logging: &logging
+      driver: json-file
+      options: # log rotation
+        max-size: "10m"
+        max-file: "20"
