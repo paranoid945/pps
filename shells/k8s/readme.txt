@@ -1,17 +1,17 @@
 prerequisite:
 we have 6 virtual machine, s1 to s6
-s1 10.0.0.101 vcpu x2 ram x6g worker node
-s2 10.0.0.102 vcpu x2 ram x6g worker node
-s3 10.0.0.103 vcpu x2 ram x6g worker node
-s4 10.0.0.104 vcpu x2 ram x2g master node
-s5 10.0.0.105 vcpu x2 ram x2g master node
-s6 10.0.0.106 vcpu x2 ram x2g master node
+s1 10.1.1.101 vcpu x2 ram x6g worker node
+s2 10.1.1.102 vcpu x2 ram x6g worker node
+s3 10.1.1.103 vcpu x2 ram x6g worker node
+s4 10.1.1.104 vcpu x2 ram x2g master node
+s5 10.1.1.105 vcpu x2 ram x2g master node
+s6 10.1.1.106 vcpu x2 ram x2g master node
 
 optional: if disable_swap.sh couldn't comment out your swap line in fstab, change accordingly with your env.
 
 init control plane from s4:
 
-sudo kubeadm init --control-plane-endpoint "10.0.0.199:8443" --upload-certs
+sudo kubeadm init --control-plane-endpoint "10.1.1.199:8443" --upload-certs
 
 # switch to normal user and config kubectl()
 su - mingyu
