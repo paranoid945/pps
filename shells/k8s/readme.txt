@@ -11,7 +11,7 @@ optional: if disable_swap.sh couldn't comment out your swap line in fstab, chang
 
 init control plane from s4:
 
-sudo kubeadm init --control-plane-endpoint "10.0.0.199:8443" --upload-certs
+sudo kubeadm init --control-plane-endpoint "10.0.0.199:8443" --upload-certs --apiserver-cert-extra-sans "192.168.1.199"
 
 # switch to normal user and config kubectl()
 su - mingyu
