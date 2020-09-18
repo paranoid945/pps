@@ -14,7 +14,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-
 
 sudo chmod +x /usr/local/bin/docker-compose
 
-mkdir /etc/docker
+mkdir -p /etc/docker
 cat > /etc/docker/daemon.json <<EOF
 {
   "exec-opts": ["native.cgroupdriver=systemd"],
