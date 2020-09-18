@@ -1,0 +1,26 @@
+nodes:
+  - address: 10.1.1.131
+    internal_address: 10.1.1.131
+    user: mingyu
+    role: [controlplane, worker, etcd]
+  - address: 10.1.1.132
+    internal_address: 10.1.1.132
+    user: mingyu
+    role: [controlplane, worker, etcd]
+  - address: 10.1.1.133
+    internal_address: 10.1.1.133
+    user: mingyu
+    role: [controlplane, worker, etcd]
+
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+
+# Required for external TLS termination with
+# ingress-nginx v0.22+
+ingress:
+  provider: nginx
+  options:
+    use-forwarded-headers: "true"
